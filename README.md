@@ -1,2 +1,3 @@
-# signal2020robots
-IoT robots from SIGNAL 2020
+# Twitch Roombas
+
+Drive a roomba via Twitch chat

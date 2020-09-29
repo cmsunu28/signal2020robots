@@ -1,0 +1,116 @@
+.vote {
+    top:50px;
+    position: absolute;
+    width: 200px;
+    padding:10px 0px;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    color: rgb(35, 54, 89);
+    background-color: #E1E3EA;
+}
+
+.vote .name {
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.vote .count {
+    color: rgb(238, 61, 150);
+    text-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    font-size:30px;
+    padding-top: 10px;
+    text-align:center;
+}
+
+.vote .clock {
+    color: rgb(0, 185, 242);
+    text-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    font-size:15px;
+    padding-top: 10px;
+    text-align:center;
+}
+
+
+.vote ul {
+    padding: 10px;
+    margin: 0px;
+}
+
+.vote ul li {
+    display: block;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #E1E3EA;
+    color: rgb(0, 185, 242);    ;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.timer {
+    top:50px;
+    position: absolute;
+    width: 200px;
+    padding-bottom:10px;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    color: rgb(35, 54, 89);
+    background-color: #E1E3EA;
+}
+
+.timer .clock {
+    color: rgb(238, 61, 150);
+    text-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    font-size:30px;
+    padding-top: 10px;
+    text-align:center;
+}
+
+.timer .spinner {
+    color: rgb(0, 185, 242);
+    text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+    font-size:15px;
+    padding: 10px 10px 20px 10px;
+    text-align:center;
+}
+
+.overlay ul {
+    padding: 10px;
+    margin: 0px;
+}
+
+.overlay ul li {
+    display: block;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #E1E3EA;
+    color: #394762;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.bargraph .container {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    background-color: #394762;
+    border-radius: 10px;
+}
+
+.bargraph .container .bar {
+    position: relative;
+    width:1%;
+    height:100%;
+    background-color:#E1E3EA;
+    border-radius:5px;
+    
+}
+
+.bargraph .container .bar.full {
+    background-color:#36D576;
+}

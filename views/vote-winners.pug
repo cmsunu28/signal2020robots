@@ -1,0 +1,34 @@
+doctype html
+html(lang='en')
+    head
+        title Overlay for spinners
+        style
+            include overlay.css
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(type="text/javascript").
+            // every 500 ms, check for update
+            $(document).ready(function(){
+                let loop=setInterval(function(){
+                    $.get(location.origin+"/vote-winners", function(data, status){
+                            let d=data.split(',');
+                            let teamName=d.shift();
+                            $('#teamName').text(`TEAM ${teamName.toUpperCase()} WINNERS`);
+                            let r = $('<ul/>');
+                            d.forEach(function(item,index) {
+                                let l=$('<li/>').text(item);
+                                r.append(l);
+                            })
+                            $('#list').empty();
+                            $('#list').append(r);
+                            console.log(data);
+                    });
+                }, 5000);
+            });
+    body
+        .vote
+            .name#teamName
+            #list
+                .ul
+                    .li now
+                    .li loading
+        

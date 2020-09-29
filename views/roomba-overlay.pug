@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+    head
+        title Overlay for spinners
+        style
+            include overlay.css
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(type="text/javascript").
+            // every 500 ms, check for update
+            $(document).ready(function(){
+                let loop=setInterval(function(){
+                    $.get(location.origin+"/current-time", function(data, status){
+                            let state=data.split(',')[1];
+                            if (state>=0) {
+                                $('#current').text(`NOW DRIVING ${data.split(',')[0].toUpperCase()}`);
+                                $('#time').text(data.split(',')[1]);
+                            }
+                            else {
+                                $('#current').text(`Time's up!`);
+                                $('#time').text('');
+                                clearInterval(loop);          
+                            }
+                            console.log(data);
+                    });
+                }, 500);
+            });
+    body
+        .timer#spinnerTime
+            .spinner#current
+            .clock#time
+        
