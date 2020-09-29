@@ -66,6 +66,8 @@ var winners=[];
 
 var allVolunteers=[];
 
+var countdown;
+
 // Define configuration options
 const opts = {
   identity: {
@@ -96,6 +98,7 @@ function onConnectedHandler (addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
   client.say(channel,`Type "!team ${teamName}" if you support team ${teamName}`);
   console.log("start countdown");
+  countdown = setInterval(countdownLoop,1000);
 }
 
 
@@ -116,11 +119,12 @@ function onMessageHandler (target, context, msg, self) {
 }
 
 function updateWinners(n,a) {
-  if (n>0) {
-    if (n>=allVolunteers.length) {
+  if (a.length>0) {
+    if (n>=a.length) {
       for (var x=0;x<a.length;x++) {
         // client.say(channel,`We have selected ${a[x]}`);
         // instead of this, update the endpoint
+        console.log(a[x]);
         winners.push(a[x]);
       }
     }
@@ -131,10 +135,12 @@ function updateWinners(n,a) {
         winners.push(a[r])
       }
       // update the endpoint with winnerArray as a string
-      
+      console.log('winners:');
+      console.log(winners);
     }
   }
   else {
+    console.log('no supporters');
     client.say(channel,`No one wanted to support team ${teamName} :(`);
   }
 
@@ -147,19 +153,17 @@ function countdownLoop() {
     }
   }
   else {
-    if (secondsInCountdown>0) {
+    if (secondsInCountdown>=0) {
       client.say(channel,`${secondsInCountdown} seconds left`);
     }
     else {
-      updateWinners(numberOfVolunteers,allVolunteers);
-      console.log(winners);
+      client.say(channel,`Time's up!`);
+      console.log('voted: ');
+      console.log(allVolunteers);
       console.log(allVolunteers.length);
+      updateWinners(numberOfVolunteers,allVolunteers);
       clearInterval(countdown);
     }
   }
   secondsInCountdown--;
-}
-
-if (secondsInCountdown!==undefined) {
-  var countdown = setInterval(countdownLoop,1000);
 }

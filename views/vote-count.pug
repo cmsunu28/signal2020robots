@@ -10,14 +10,13 @@ html(lang='en')
             $(document).ready(function(){
                 let loop=setInterval(function(){
                     $.get(location.origin+"/vote-count", function(data, status){
-                            let state=data.split(',')[0];
-                            if (state!=0) {
+                            let state=data.split(',')[2];
+                            if (state>=0) {
                                 $('#teamName').text(`TEAM ${data.split(',')[0].toUpperCase()}`);
                                 $('#current').text(data.split(',')[1]);
                                 $('#time').text(`${data.split(',')[2]} seconds left to vote`);
                             }
                             else {
-                                $('#current').text('');
                                 $('#time').text('');
                                 clearInterval(loop);          
                             }
