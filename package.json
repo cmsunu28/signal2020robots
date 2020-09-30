@@ -1,0 +1,30 @@
+{
+  "name": "signal2020robots",
+  "version": "1.0.0",
+  "description": "for robots seen on Twilio TV at SIGNAL 2020",
+  "main": "nom.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "ngrok": "^3.3.0",
+    "pug": "^3.0.0",
+    "tmi.js": "^1.5.0",
+    "twilio": "^3.49.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmsunu28/signal2020robots.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmsunu28/signal2020robots/issues"
+  },
+  "homepage": "https://github.com/cmsunu28/signal2020robots#readme"
+}
